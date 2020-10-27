@@ -1,0 +1,24 @@
+//create database
+use B1
+
+//create collectoion/table
+db.createCollection("student")
+
+//insert() method
+db.student.insert({_id:73,name:"saurabh",city:"akola",exp:2})
+
+//inesrtMany() method
+db.student.insertMany([
+{_id:58,name:"shreyas",city:"pune",exp:5},
+{_id:60,name:"sojas",city:"baramati",exp:3},
+{_id:1,name:"venkatesh",city:"baramati",exp:3},
+{_id:70,name:"sanket",city:"pune",exp:4}
+])
+
+//save() function
+db.student.save(
+{_id:68,name:"sanket",city:"sangamner",exp:1}
+)
+
+//find() function
+db.student.find()

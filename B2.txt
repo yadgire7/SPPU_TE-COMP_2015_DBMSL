@@ -1,0 +1,54 @@
+//create database
+use B1
+
+//create collectoion/table
+db.createCollection("student")
+
+//insert() method
+db.student.insert({_id:73,name:"saurabh",city:"akola",exp:2})
+
+//inesrtMany() method
+db.student.insertMany([
+{_id:58,name:"shreyas",city:"pune",exp:5},
+{_id:60,name:"sojas",city:"baramati",exp:3},
+{_id:61,name:"venkatesh",city:"baramati",exp:3},
+{_id:70,name:"sanket",city:"pune",exp:4}
+])
+
+//save() function
+db.student.save(
+{_id:68,name:"sanket",city:"sangamner",exp:1}
+)
+
+//find() function
+db.student.find()
+
+//find() with specific parameter
+db.student.find({_id:61})
+
+db.student.find({name:"sanket"})
+
+//update() function
+db.student.update({_id:68},
+{$set:{exp:7}
+}
+)
+
+//AND operation along with greater than operator
+db.student.find({$and: [{name:"sanket"},{exp:{$gt:4}}]})
+
+//OR operation
+db.student.find({$or: [{city:"pune"},{city:"baramati"}]})
+
+//NOT opeartion along with greater than operator
+db.student.find({exp: {$not:{$gt:4}}})
+
+
+
+
+
+
+
+
+
+
